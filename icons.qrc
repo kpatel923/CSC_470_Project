@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>ad.jpeg</file>
+    <file>new.png</file>
+    <file>new.jpg</file>
+    <file>unnamed.png</file>
+    <file>this.jpg</file>
+    <file>cil-user.png</file>
+    <file>cil-user.png</file>
+    <file>cil-hand-point-right.png</file>
+    <file>cil-settings.png</file>
+    <file>cil-menu.png</file>
+    <file>cil-arrow-circle-right.png</file>
+    <file>cil-user-follow.png</file>
+    <file>cil-user-follow.png</file>
+    <file>cil-find-in-page.png</file>
+    <file>cil-home.png</file>
+    <file>cil-paperclip.png</file>
+  </qresource>
+</RCC>

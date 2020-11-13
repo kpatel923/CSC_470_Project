@@ -1,0 +1,1110 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM_[Default_Changelist]/shelved.patch	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM_[Default_Changelist]/shelved.patch	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
+@@ -1,297 +0,0 @@
+-Index: test.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import sys\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\n\r\nimport MySQLdb\r\nfrom PyQt5.uic import loadUiType\r\nfrom actions import *\r\n\r\n# GUI FILE\r\n# IMPORT FUNCTIONS\r\n\r\nui,_ = loadUiType('ui_main.ui')\r\n\r\nclass MainApp(QMainWindow, ui):\r\n    def __init__(self):\r\n        QMainWindow.__init__(self)\r\n        self.setupUi(self)\r\n        ## TOGGLE/BURGUER MENU\r\n        ########################################################################\r\n        self.Btn_Toggle.clicked.connect(lambda: Animation.toggleMenu(self, 250, True))\r\n\r\n\r\n        ## PAGES\r\n        ########################################################################\r\n\r\n        # Home\r\n        common_Buttons.home_screen(self)\r\n        # PAGE search\r\n        common_Buttons.search_screen(self)\r\n        # PAGE librarian\r\n        common_Buttons.librarian_screen(self)\r\n        #PAGE Admin\r\n        common_Buttons.Admin_page(self)\r\n\r\n        # PAGE user_login\r\n\r\n        user_Buttons.forgot_email(self)\r\n        user_Buttons.forgot_password(self)\r\n\r\n        # PAGE signup\r\n        user_Buttons.signup_screen(self)\r\n        self.btn_signup_2.clicked.connect(lambda: self.show_signup())\r\n        user_Buttons.signup_screen_2(self)\r\n\r\n        # PAGE user\r\n        #self.btn_login_2.clicked.connect(lambda: self.show_popup())\r\n        user_Buttons.user_screen(self)\r\n        #self.btn_request.clicked.connect(lambda: self.darkBlueTheme())\r\n        self.btn_remove.clicked.connect(lambda: self.show_bookNotFound())\r\n        user_Buttons.logout_screen(self)\r\n        user_Buttons.cancel(self)\r\n\r\n        # PAGE Librarian\r\n        ##self.btn_Librarian_login.clicked.connect(lambda: self.show_popup())\r\n        librarian_Buttons.Librarian_screen(self)\r\n        librarian_Buttons.Librarian_password(self)\r\n        librarian_Buttons.Librarian_email(self)\r\n        librarian_Buttons.Librarian_logout(self)\r\n        librarian_Buttons.Cancel(self)\r\n\r\n        # PAGE Admin\r\n        admin_Buttons.Admin_logout(self)\r\n\r\n        self.btn_Request.clicked.connect(lambda: self.show_bookNotFound())\r\n        self.btn_Remove.clicked.connect(lambda: self.show_bookNotFound())\r\n        self.btn_Checkout.clicked.connect(lambda: self.show_checkSuccess())\r\n        self.btn_Checkin.clicked.connect(lambda: self.show_checkSuccess())\r\n        self.btn_Scan.clicked.connect(lambda: self.show_scanUser())\r\n        ## SHOW ==> MAIN WINDOW\r\n        ########################################################################\r\n        self.show()\r\n        ## ==> END ##\r\n\r\n    def show_popup(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Login Success!\")\r\n        msg.setText(\"Login Success\")\r\n        x = msg.exec_()\r\n\r\n    def show_signup(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Email already exists!\")\r\n        x = msg.exec_()\r\n\r\n    def show_bookNotFound(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Book not found!\")\r\n        x = msg.exec_()\r\n\r\n    def show_checkSuccess(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Process Success!\")\r\n        msg.setText(\"Transactions completed!\")\r\n        x = msg.exec_()\r\n\r\n    def show_scanUser(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Borrower Not found!\")\r\n        x = msg.exec_()\r\n\r\n    def darkBlueTheme(self):\r\n        style = open('themes/darkstyle.css', 'r')\r\n        style = style.read()\r\n        self.setStyleSheet(style)\r\ndef main():\r\n    app = QApplication(sys.argv)\r\n    window = MainApp()\r\n    window.show()\r\n    window.setFixedHeight(700)\r\n    window.setFixedWidth(992)\r\n    app.exec_()\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- test.py	(revision feb89430c9ef8a2c46954fd6f4f6e4dd04c7b73e)
+-+++ test.py	(date 1603937037959)
+-@@ -20,7 +20,6 @@
+-         ########################################################################
+-         self.Btn_Toggle.clicked.connect(lambda: Animation.toggleMenu(self, 250, True))
+- 
+--
+-         ## PAGES
+-         ########################################################################
+- 
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.7\" project-jdk-type=\"Python SDK\" />\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/misc.xml	(revision feb89430c9ef8a2c46954fd6f4f6e4dd04c7b73e)
+-+++ .idea/misc.xml	(date 1603934735259)
+-@@ -1,4 +1,4 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+--  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7" project-jdk-type="Python SDK" />
+-+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (venv)" project-jdk-type="Python SDK" />
+- </project>
+-\ No newline at end of file
+-Index: .idea/Pyless_test.iml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/Pyless_test.iml	(revision feb89430c9ef8a2c46954fd6f4f6e4dd04c7b73e)
+-+++ .idea/Pyless_test.iml	(date 1603934735325)
+-@@ -2,7 +2,7 @@
+- <module type="PYTHON_MODULE" version="4">
+-   <component name="NewModuleRootManager">
+-     <content url="file://$MODULE_DIR$" />
+--    <orderEntry type="inheritedJdk" />
+-+    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
+-     <orderEntry type="sourceFolder" forTests="false" />
+-   </component>
+- </module>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"fonts big\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1jDDpig9XnSXqe6Yl3vn4MUxlwj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../LibraryGUI\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\patel\\PycharmProjects\\Pyless_test\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.test\">\r\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/test.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"ui_functions\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/ui_functions.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.test\" />\r\n        <item itemvalue=\"Python.ui_functions\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1603329953908</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1603329953908</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"adding Chris\">\r\n      <created>1603589746939</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603589746939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"adding Chris\">\r\n      <created>1603589867866</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603589867866</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"gui\">\r\n      <created>1603649945102</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603649945102</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"gui\">\r\n      <created>1603899905536</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603899905536</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"updated\">\r\n      <created>1603899963935</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603899963935</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"updated\">\r\n      <created>1603901378054</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603901378054</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"updated\">\r\n      <created>1603901985930</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603901985930</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fonts big\">\r\n      <created>1603930435387</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603930435387</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"adding Chris\" />\r\n    <MESSAGE value=\"gui\" />\r\n    <MESSAGE value=\"updated\" />\r\n    <MESSAGE value=\"fonts big\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fonts big\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1603478365443\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603478365443\" />\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl\" timestamp=\"1603588662969\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603588662969\" />\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog\" timestamp=\"1603585801605\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585801605\" />\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1603585767332\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585767332\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1603930595500\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930595500\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.center\" timestamp=\"1603930595499\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930595499\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.left\" timestamp=\"1603930595499\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930595499\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.right\" timestamp=\"1603930595500\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930595500\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.center\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.left\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.right\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor\" timestamp=\"1603589664570\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603589664570\" />\r\n    <state x=\"-1459\" y=\"517\" key=\"SettingsEditor/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331399437\" />\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1603930438396\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930438396\" />\r\n    <state x=\"-1297\" y=\"574\" key=\"search.everywhere.popup\" timestamp=\"1603467263336\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1297\" y=\"574\" key=\"search.everywhere.popup/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603467263336\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/workspace.xml	(revision feb89430c9ef8a2c46954fd6f4f6e4dd04c7b73e)
+-+++ .idea/workspace.xml	(date 1604075260028)
+-@@ -1,7 +1,30 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-+  <component name="BranchesTreeState">
+-+    <expand>
+-+      <path>
+-+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+      </path>
+-+      <path>
+-+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+      </path>
+-+      <path>
+-+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-+      </path>
+-+    </expand>
+-+    <select />
+-+  </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="fonts big" />
+-+    <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="adding Chris">
+-+      <change beforePath="$PROJECT_DIR$/.idea/Pyless_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pyless_test.iml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+-+    </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -16,6 +39,9 @@
+-   </component>
+-   <component name="Git.Settings">
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-+  </component>
+-+  <component name="GitToolBoxStore">
+-+    <option name="projectConfigVersion" value="2" />
+-   </component>
+-   <component name="ProjectId" id="1jDDpig9XnSXqe6Yl3vn4MUxlwj" />
+-   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-@@ -26,7 +52,7 @@
+-   <component name="PropertiesComponent">
+-     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+--    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LibraryGUI" />
+-+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+-   </component>
+-   <component name="RecentsManager">
+-@@ -84,6 +110,7 @@
+-       </list>
+-     </recent_temporary>
+-   </component>
+-+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-   <component name="SvnConfiguration">
+-     <configuration />
+-   </component>
+-@@ -109,57 +136,24 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1603589867866</updated>
+-     </task>
+--    <task id="LOCAL-00003" summary="gui">
+--      <created>1603649945102</created>
+--      <option name="number" value="00003" />
+--      <option name="presentableId" value="LOCAL-00003" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1603649945102</updated>
+--    </task>
+--    <task id="LOCAL-00004" summary="gui">
+--      <created>1603899905536</created>
+--      <option name="number" value="00004" />
+--      <option name="presentableId" value="LOCAL-00004" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1603899905536</updated>
+--    </task>
+--    <task id="LOCAL-00005" summary="updated">
+--      <created>1603899963935</created>
+--      <option name="number" value="00005" />
+--      <option name="presentableId" value="LOCAL-00005" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1603899963935</updated>
+--    </task>
+--    <task id="LOCAL-00006" summary="updated">
+--      <created>1603901378054</created>
+--      <option name="number" value="00006" />
+--      <option name="presentableId" value="LOCAL-00006" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1603901378054</updated>
+--    </task>
+--    <task id="LOCAL-00007" summary="updated">
+--      <created>1603901985930</created>
+--      <option name="number" value="00007" />
+--      <option name="presentableId" value="LOCAL-00007" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1603901985930</updated>
+--    </task>
+--    <task id="LOCAL-00008" summary="fonts big">
+--      <created>1603930435387</created>
+--      <option name="number" value="00008" />
+--      <option name="presentableId" value="LOCAL-00008" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1603930435387</updated>
+--    </task>
+--    <option name="localTasksCounter" value="9" />
+-+    <option name="localTasksCounter" value="3" />
+-     <servers />
+-+  </component>
+-+  <component name="Vcs.Log.Tabs.Properties">
+-+    <option name="TAB_STATES">
+-+      <map>
+-+        <entry key="MAIN">
+-+          <value>
+-+            <State />
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-+    <option name="oldMeFiltersMigrated" value="true" />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="adding Chris" />
+--    <MESSAGE value="gui" />
+--    <MESSAGE value="updated" />
+--    <MESSAGE value="fonts big" />
+--    <option name="LAST_COMMIT_MESSAGE" value="fonts big" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="adding Chris" />
+-   </component>
+-   <component name="WindowStateProjectService">
+-     <state x="-1230" y="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603478365443">
+-@@ -178,59 +172,72 @@
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+-     <state x="-1147" y="577" key="Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603585767332" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.bottom" timestamp="1603930595500">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.bottom" timestamp="1603938782642">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930595500" />
+--    <state width="1878" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1603938782642" />
+-+    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603649934014" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.center" timestamp="1603930595499">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.center" timestamp="1603938782642">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="135" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930595499" />
+--    <state width="1878" height="240" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1603938782642" />
+-+    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603649934014" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.left" timestamp="1603930595499">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.left" timestamp="1603938782642">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="135" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930595499" />
+--    <state width="1878" height="240" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1603938782642" />
+-+    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603649934013" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.right" timestamp="1603930595500">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.right" timestamp="1603938782642">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="135" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930595500" />
+--    <state width="1878" height="240" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1603938782642" />
+-+    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603649934014" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.bottom" timestamp="1603938782643">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1603938782643" />
+-+    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603586157714" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.center" timestamp="1603938782643">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1603938782643" />
+-+    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603586157713" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.left" timestamp="1603938782643">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1603938782643" />
+-+    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603586157713" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.right" timestamp="1603938782643">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-+    </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1603938782643" />
+-+    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603586157713" />
+-+    <state x="129" y="56" key="MergeDialog" timestamp="1603934827136">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+--    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state x="-1408" y="498" key="SettingsEditor" timestamp="1603589664570">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state x="129" y="56" key="MergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1603934827136" />
+-+    <state x="364" y="28" key="SettingsEditor" timestamp="1603654526027">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state x="364" y="28" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1603654526027" />
+-     <state x="-1408" y="498" key="SettingsEditor/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603589664570" />
+-     <state x="-1459" y="517" key="SettingsEditor/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331399437" />
+--    <state x="-1368" y="605" key="Vcs.Push.Dialog.v2" timestamp="1603930438396">
+-+    <state x="-1368" y="605" key="Vcs.Push.Dialog.v2" timestamp="1603589870270">
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+--    <state x="-1368" y="605" key="Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930438396" />
+-+    <state x="-1368" y="605" key="Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603589870270" />
+-+    <state x="500" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603934896893">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-+    </state>
+-+    <state x="500" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1603934896893" />
+-     <state x="-1297" y="574" key="search.everywhere.popup" timestamp="1603467263336">
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM__Default_Changelist_.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM__Default_Changelist_.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM_[Default_Changelist]" date="1604246437900" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/1/2020 10:52 AM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM_[Default_Changelist]/shelved.patch	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_11_1_2020_10_52_AM_[Default_Changelist]/shelved.patch	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
+@@ -1,256 +0,0 @@
+-Index: test.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import sys\r\nimport datetime\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\nfrom PyQt5.uic import loadUiType\r\nimport MySQLdb\r\n\r\n\r\n#Files\r\nfrom actions import *\r\n\r\n\r\n# GUI FILE\r\n# Database connection\r\ndb_Host = \"local_host\"\r\ndb_Name = \"library\"\r\ndb_User = \"lcs\"\r\ndb_Password = \"root\"\r\n\r\n\r\n\r\n\r\nui,_ = loadUiType('ui_main.ui')\r\n\r\nclass MainApp(QMainWindow, ui):\r\n    def __init__(self):\r\n        QMainWindow.__init__(self)\r\n        self.setupUi(self)\r\n        ## TOGGLE/BURGUER MENU\r\n        ########################################################################\r\n        self.Btn_Toggle.clicked.connect(lambda: Animation.toggleMenu(self, 250, True))\r\n\r\n\r\n        ## PAGES\r\n        ########################################################################\r\n\r\n        # Home\r\n        common_Buttons.home_screen(self)\r\n        # PAGE search\r\n        common_Buttons.search_screen(self)\r\n        # PAGE librarian\r\n        common_Buttons.librarian_screen(self)\r\n        #PAGE Admin\r\n        common_Buttons.Admin_page(self)\r\n\r\n        # PAGE user_login\r\n\r\n        user_Buttons.forgot_email(self)\r\n        user_Buttons.forgot_password(self)\r\n\r\n        # PAGE signup\r\n        user_Buttons.signup_screen(self)\r\n        self.btn_signup_2.clicked.connect(lambda: self.show_signup())\r\n        user_Buttons.signup_screen_2(self)\r\n\r\n        # PAGE user\r\n        #self.btn_login_2.clicked.connect(lambda: self.show_popup())\r\n        user_Buttons.user_screen(self)\r\n        #self.btn_request.clicked.connect(lambda: self.darkBlueTheme())\r\n        self.btn_remove.clicked.connect(lambda: self.show_bookNotFound())\r\n        user_Buttons.logout_screen(self)\r\n        user_Buttons.cancel(self)\r\n\r\n        # PAGE Librarian\r\n        ##self.btn_Librarian_login.clicked.connect(lambda: self.show_popup())\r\n        librarian_Buttons.Librarian_screen(self)\r\n        librarian_Buttons.Librarian_password(self)\r\n        librarian_Buttons.Librarian_email(self)\r\n        librarian_Buttons.Librarian_logout(self)\r\n        librarian_Buttons.Cancel(self)\r\n\r\n        # PAGE Admin\r\n        admin_Buttons.Admin_logout(self)\r\n\r\n        self.btn_Request.clicked.connect(lambda: self.show_bookNotFound())\r\n        self.btn_Remove.clicked.connect(lambda: self.show_bookNotFound())\r\n        self.btn_Checkout.clicked.connect(lambda: self.show_checkSuccess())\r\n        self.btn_Checkin.clicked.connect(lambda: self.show_checkSuccess())\r\n        self.btn_Scan.clicked.connect(lambda: self.show_scanUser())\r\n        ## SHOW ==> MAIN WINDOW\r\n        ########################################################################\r\n        self.show()\r\n        ## ==> END ##\r\n\r\n    def show_popup(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Login Success!\")\r\n        msg.setText(\"Login Success\")\r\n        x = msg.exec_()\r\n\r\n    def show_signup(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Email already exists!\")\r\n        x = msg.exec_()\r\n\r\n    def show_bookNotFound(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Book not found!\")\r\n        x = msg.exec_()\r\n\r\n    def show_checkSuccess(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Process Success!\")\r\n        msg.setText(\"Transactions completed!\")\r\n        x = msg.exec_()\r\n\r\n    def show_scanUser(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Borrower Not found!\")\r\n        x = msg.exec_()\r\n\r\n    def darkBlueTheme(self):\r\n        style = open('themes/darkstyle.css', 'r')\r\n        style = style.read()\r\n        self.setStyleSheet(style)\r\ndef main():\r\n    app = QApplication(sys.argv)\r\n    window = MainApp()\r\n    window.show()\r\n    window.setFixedHeight(700)\r\n    window.setFixedWidth(992)\r\n    app.exec_()\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- test.py	(revision ab40e50602ff201e14b0cd771776e49177facf44)
+-+++ test.py	(date 1604101011947)
+-@@ -31,7 +31,6 @@
+-         ########################################################################
+-         self.Btn_Toggle.clicked.connect(lambda: Animation.toggleMenu(self, 250, True))
+- 
+--
+-         ## PAGES
+-         ########################################################################
+- 
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.7\" project-jdk-type=\"Python SDK\" />\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/misc.xml	(revision ab40e50602ff201e14b0cd771776e49177facf44)
+-+++ .idea/misc.xml	(date 1604101012067)
+-@@ -1,4 +1,4 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+--  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7" project-jdk-type="Python SDK" />
+-+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (venv)" project-jdk-type="Python SDK" />
+- </project>
+-\ No newline at end of file
+-Index: .idea/Pyless_test.iml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/Pyless_test.iml	(revision ab40e50602ff201e14b0cd771776e49177facf44)
+-+++ .idea/Pyless_test.iml	(date 1604101012132)
+-@@ -2,7 +2,7 @@
+- <module type="PYTHON_MODULE" version="4">
+-   <component name="NewModuleRootManager">
+-     <content url="file://$MODULE_DIR$" />
+--    <orderEntry type="inheritedJdk" />
+-+    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
+-     <orderEntry type="sourceFolder" forTests="false" />
+-   </component>
+- </module>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:github\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:githubs\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"updated fiday\">\r\n      <change afterPath=\"$PROJECT_DIR$/borrower.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/actions.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/actions.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/messages.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/messages.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ui_main.ui\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ui_main.ui\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1jDDpig9XnSXqe6Yl3vn4MUxlwj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File\" value=\"Python\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../LibraryGUI\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\patel\\PycharmProjects\\Pyless_test\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.test\">\r\n    <configuration name=\"borrower\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/borrower.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/test.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"ui_functions\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/ui_functions.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.test\" />\r\n        <item itemvalue=\"Python.borrower\" />\r\n        <item itemvalue=\"Python.ui_functions\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1603329953908</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1603329953908</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"adding Chris\">\r\n      <created>1603589746939</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603589746939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"adding Chris\">\r\n      <created>1603589867866</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603589867866</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"gui\">\r\n      <created>1603649945102</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603649945102</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"gui\">\r\n      <created>1603899905536</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603899905536</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"updated\">\r\n      <created>1603899963935</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603899963935</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"updated\">\r\n      <created>1603901378054</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603901378054</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"updated\">\r\n      <created>1603901985930</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603901985930</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fonts big\">\r\n      <created>1603930435387</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603930435387</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"slight mods\">\r\n      <created>1603930756664</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603930756664</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"updated fiday\">\r\n      <created>1604072288187</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604072288187</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"adding Chris\" />\r\n    <MESSAGE value=\"gui\" />\r\n    <MESSAGE value=\"updated\" />\r\n    <MESSAGE value=\"fonts big\" />\r\n    <MESSAGE value=\"slight mods\" />\r\n    <MESSAGE value=\"updated fiday\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"updated fiday\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"-1506\" y=\"527\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1604073268270\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1506\" y=\"527\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604073268270\" />\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1603478365443\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603478365443\" />\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl\" timestamp=\"1603588662969\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603588662969\" />\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog\" timestamp=\"1603585801605\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585801605\" />\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1603585767332\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585767332\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1604075161171\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075161171\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.center\" timestamp=\"1604075161171\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075161171\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.left\" timestamp=\"1604075161171\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075161171\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.right\" timestamp=\"1604075161171\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075161171\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1604075027520\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075027520\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.center\" timestamp=\"1604075027520\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075027520\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.left\" timestamp=\"1604075027520\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075027520\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.right\" timestamp=\"1604075027520\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604075027520\" />\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor\" timestamp=\"1604073815500\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604073815500\" />\r\n    <state x=\"-1459\" y=\"517\" key=\"SettingsEditor/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331399437\" />\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1604072293601\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604072293601\" />\r\n    <state x=\"-1297\" y=\"574\" key=\"search.everywhere.popup\" timestamp=\"1603467263336\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1297\" y=\"574\" key=\"search.everywhere.popup/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603467263336\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/workspace.xml	(revision ab40e50602ff201e14b0cd771776e49177facf44)
+-+++ .idea/workspace.xml	(date 1604243911072)
+-@@ -13,28 +13,17 @@
+-       <path>
+-         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+--        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+--      </path>
+--      <path>
+--        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+--        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+--        <item name="GROUP_NODE:githubs" type="e8cecc67:BranchNodeDescriptor" />
+--      </path>
+--      <path>
+--        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+--        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-       </path>
+-     </expand>
+-     <select />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="updated fiday">
+--      <change afterPath="$PROJECT_DIR$/borrower.py" afterDir="false" />
+-+    <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="slight mods">
+-+      <change beforePath="$PROJECT_DIR$/.idea/Pyless_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pyless_test.iml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/messages.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/ui_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_main.ui" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -51,6 +40,16 @@
+-   <component name="Git.Settings">
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+-+  <component name="GitToolBoxStore">
+-+    <option name="projectConfigVersion" value="2" />
+-+  </component>
+-+  <component name="GithubPullRequestsUISettings">
+-+    <option name="hiddenUrls">
+-+      <set>
+-+        <option value="https://github.com/bobdoe945/470_GUI" />
+-+      </set>
+-+    </option>
+-+  </component>
+-   <component name="ProjectId" id="1jDDpig9XnSXqe6Yl3vn4MUxlwj" />
+-   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+-   <component name="ProjectViewState">
+-@@ -69,7 +68,7 @@
+-       <recent name="C:\Users\patel\PycharmProjects\Pyless_test" />
+-     </key>
+-   </component>
+--  <component name="RunManager" selected="Python.test">
+-+  <component name="RunManager" selected="Python.testing_functions">
+-     <configuration name="borrower" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-       <module name="Pyless_test" />
+-       <option name="INTERPRETER_OPTIONS" value="" />
+-@@ -112,6 +111,27 @@
+-       <option name="INPUT_FILE" value="" />
+-       <method v="2" />
+-     </configuration>
+-+    <configuration name="testing_functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-+      <module name="Pyless_test" />
+-+      <option name="INTERPRETER_OPTIONS" value="" />
+-+      <option name="PARENT_ENVS" value="true" />
+-+      <envs>
+-+        <env name="PYTHONUNBUFFERED" value="1" />
+-+      </envs>
+-+      <option name="SDK_HOME" value="" />
+-+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-+      <option name="IS_MODULE_SDK" value="true" />
+-+      <option name="ADD_CONTENT_ROOTS" value="true" />
+-+      <option name="ADD_SOURCE_ROOTS" value="true" />
+-+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing_functions.py" />
+-+      <option name="PARAMETERS" value="" />
+-+      <option name="SHOW_COMMAND_LINE" value="false" />
+-+      <option name="EMULATE_TERMINAL" value="false" />
+-+      <option name="MODULE_MODE" value="false" />
+-+      <option name="REDIRECT_INPUT" value="false" />
+-+      <option name="INPUT_FILE" value="" />
+-+      <method v="2" />
+-+    </configuration>
+-     <configuration name="ui_functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-       <module name="Pyless_test" />
+-       <option name="INTERPRETER_OPTIONS" value="" />
+-@@ -135,12 +155,14 @@
+-     </configuration>
+-     <recent_temporary>
+-       <list>
+-+        <item itemvalue="Python.testing_functions" />
+-         <item itemvalue="Python.test" />
+-         <item itemvalue="Python.borrower" />
+-         <item itemvalue="Python.ui_functions" />
+-       </list>
+-     </recent_temporary>
+-   </component>
+-+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-   <component name="SvnConfiguration">
+-     <configuration />
+-   </component>
+-@@ -235,6 +257,7 @@
+-         </entry>
+-       </map>
+-     </option>
+-+    <option name="oldMeFiltersMigrated" value="true" />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="adding Chris" />
+-@@ -266,49 +289,57 @@
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+-     <state x="-1147" y="577" key="Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603585767332" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.bottom" timestamp="1604075161171">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.bottom" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075161171" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.center" timestamp="1604075161171">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.center" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075161171" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.left" timestamp="1604075161171">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.left" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075161171" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.right" timestamp="1604075161171">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.right" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075161171" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1604075027520">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.bottom" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075027520" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1604075027520">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.center" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075027520" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1604075027520">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.left" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075027520" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1604075027520">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.right" timestamp="1604113280127">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1604113280127" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604075027520" />
+-     <state x="-1408" y="498" key="SettingsEditor" timestamp="1604073815500">
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-@@ -319,6 +350,10 @@
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+-     <state x="-1368" y="605" key="Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604072293601" />
+-+    <state x="500" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604113698263">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-+    </state>
+-+    <state x="500" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1604113698263" />
+-     <state x="-1297" y="574" key="search.everywhere.popup" timestamp="1603467263336">
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM_[Default_Changelist]/shelved.patch	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM_[Default_Changelist]/shelved.patch	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
+@@ -1,185 +0,0 @@
+-Index: test.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import sys\r\nimport datetime\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\nfrom PyQt5.uic import loadUiType\r\nimport MySQLdb\r\n\r\n\r\n#Files\r\nfrom actions import *\r\n\r\n\r\n# GUI FILE\r\n# Database connection\r\ndb_Host = \"local_host\"\r\ndb_Name = \"library\"\r\ndb_User = \"lcs\"\r\ndb_Password = \"root\"\r\n\r\n\r\n\r\n\r\nui,_ = loadUiType('ui_main.ui')\r\n\r\nclass MainApp(QMainWindow, ui):\r\n    def __init__(self):\r\n        QMainWindow.__init__(self)\r\n        self.setupUi(self)\r\n        ## TOGGLE/BURGUER MENU\r\n        ########################################################################\r\n        self.Btn_Toggle.clicked.connect(lambda: Animation.toggleMenu(self, 250, True))\r\n\r\n\r\n        ## PAGES\r\n        ########################################################################\r\n\r\n        # Home\r\n        common_Buttons.home_screen(self)\r\n        # PAGE search\r\n        common_Buttons.search_screen(self)\r\n        # PAGE librarian\r\n        common_Buttons.librarian_screen(self)\r\n        #PAGE Admin\r\n        common_Buttons.Admin_page(self)\r\n\r\n        # PAGE user_login\r\n\r\n        user_Buttons.forgot_email(self)\r\n        user_Buttons.forgot_password(self)\r\n\r\n        # PAGE signup\r\n        user_Buttons.signup_screen(self)\r\n        self.btn_signup_2.clicked.connect(lambda: self.show_signup())\r\n        user_Buttons.signup_screen_2(self)\r\n\r\n        # PAGE user\r\n        #self.btn_login_2.clicked.connect(lambda: self.show_popup())\r\n        user_Buttons.user_screen(self)\r\n        #self.btn_request.clicked.connect(lambda: self.darkBlueTheme())\r\n        self.btn_remove.clicked.connect(lambda: self.show_bookNotFound())\r\n        user_Buttons.logout_screen(self)\r\n        user_Buttons.cancel(self)\r\n\r\n        # PAGE Librarian\r\n        ##self.btn_Librarian_login.clicked.connect(lambda: self.show_popup())\r\n        librarian_Buttons.Librarian_screen(self)\r\n        librarian_Buttons.Librarian_password(self)\r\n        librarian_Buttons.Librarian_email(self)\r\n        librarian_Buttons.Librarian_logout(self)\r\n        librarian_Buttons.Cancel(self)\r\n\r\n        # PAGE Admin\r\n        admin_Buttons.Admin_logout(self)\r\n\r\n        self.btn_Request.clicked.connect(lambda: self.show_bookNotFound())\r\n        self.btn_Remove.clicked.connect(lambda: self.show_bookNotFound())\r\n        self.btn_Checkout.clicked.connect(lambda: self.show_checkSuccess())\r\n        self.btn_Checkin.clicked.connect(lambda: self.show_checkSuccess())\r\n        self.btn_Scan.clicked.connect(lambda: self.show_scanUser())\r\n        ## SHOW ==> MAIN WINDOW\r\n        ########################################################################\r\n        self.show()\r\n        ## ==> END ##\r\n\r\n    def show_popup(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Login Success!\")\r\n        msg.setText(\"Login Success\")\r\n        x = msg.exec_()\r\n\r\n    def show_signup(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Email already exists!\")\r\n        x = msg.exec_()\r\n\r\n    def show_bookNotFound(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Book not found!\")\r\n        x = msg.exec_()\r\n\r\n    def show_checkSuccess(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Process Success!\")\r\n        msg.setText(\"Transactions completed!\")\r\n        x = msg.exec_()\r\n\r\n    def show_scanUser(self):\r\n        msg = QMessageBox()\r\n        msg.setWindowTitle(\"Error!\")\r\n        msg.setText(\"Borrower Not found!\")\r\n        x = msg.exec_()\r\n\r\n    def darkBlueTheme(self):\r\n        style = open('themes/darkstyle.css', 'r')\r\n        style = style.read()\r\n        self.setStyleSheet(style)\r\ndef main():\r\n    app = QApplication(sys.argv)\r\n    window = MainApp()\r\n    window.show()\r\n    window.setFixedHeight(700)\r\n    window.setFixedWidth(992)\r\n    app.exec_()\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- test.py	(revision 9c4b02a752dc8a765495bfea7389b9c1254683fe)
+-+++ test.py	(date 1604075339782)
+-@@ -31,7 +31,6 @@
+-         ########################################################################
+-         self.Btn_Toggle.clicked.connect(lambda: Animation.toggleMenu(self, 250, True))
+- 
+--
+-         ## PAGES
+-         ########################################################################
+- 
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.7\" project-jdk-type=\"Python SDK\" />\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/misc.xml	(revision 9c4b02a752dc8a765495bfea7389b9c1254683fe)
+-+++ .idea/misc.xml	(date 1604075340309)
+-@@ -1,4 +1,4 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+--  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7" project-jdk-type="Python SDK" />
+-+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (venv)" project-jdk-type="Python SDK" />
+- </project>
+-\ No newline at end of file
+-Index: .idea/Pyless_test.iml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/Pyless_test.iml	(revision 9c4b02a752dc8a765495bfea7389b9c1254683fe)
+-+++ .idea/Pyless_test.iml	(date 1604075340713)
+-@@ -2,7 +2,7 @@
+- <module type="PYTHON_MODULE" version="4">
+-   <component name="NewModuleRootManager">
+-     <content url="file://$MODULE_DIR$" />
+--    <orderEntry type="inheritedJdk" />
+-+    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
+-     <orderEntry type="sourceFolder" forTests="false" />
+-   </component>
+- </module>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"slight mods\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/test.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/test.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ui_main.ui\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ui_main.ui\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1jDDpig9XnSXqe6Yl3vn4MUxlwj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../LibraryGUI\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\patel\\PycharmProjects\\Pyless_test\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.test\">\r\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/test.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"ui_functions\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/ui_functions.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.test\" />\r\n        <item itemvalue=\"Python.ui_functions\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1603329953908</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1603329953908</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"adding Chris\">\r\n      <created>1603589746939</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603589746939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"adding Chris\">\r\n      <created>1603589867866</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603589867866</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"gui\">\r\n      <created>1603649945102</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603649945102</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"gui\">\r\n      <created>1603899905536</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603899905536</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"updated\">\r\n      <created>1603899963935</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603899963935</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"updated\">\r\n      <created>1603901378054</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603901378054</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"updated\">\r\n      <created>1603901985930</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603901985930</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fonts big\">\r\n      <created>1603930435387</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603930435387</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"slight mods\">\r\n      <created>1603930756664</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1603930756664</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"adding Chris\" />\r\n    <MESSAGE value=\"gui\" />\r\n    <MESSAGE value=\"updated\" />\r\n    <MESSAGE value=\"fonts big\" />\r\n    <MESSAGE value=\"slight mods\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"slight mods\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1603478365443\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603478365443\" />\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl\" timestamp=\"1603588662969\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603588662969\" />\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog\" timestamp=\"1603585801605\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585801605\" />\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1603585767332\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585767332\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1603930731826\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930731826\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.center\" timestamp=\"1603930731826\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930731826\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.left\" timestamp=\"1603930731826\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930731826\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.right\" timestamp=\"1603930731826\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"135\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930731826\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.center\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.left\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.right\" timestamp=\"1603901288887\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state width=\"1877\" height=\"342\" key=\"GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603901288887\" />\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor\" timestamp=\"1603589664570\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603589664570\" />\r\n    <state x=\"-1459\" y=\"517\" key=\"SettingsEditor/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331399437\" />\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1603930758900\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603930758900\" />\r\n    <state x=\"-1297\" y=\"574\" key=\"search.everywhere.popup\" timestamp=\"1603467263336\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1297\" y=\"574\" key=\"search.everywhere.popup/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603467263336\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/workspace.xml	(revision 9c4b02a752dc8a765495bfea7389b9c1254683fe)
+-+++ .idea/workspace.xml	(date 1604100862512)
+-@@ -1,10 +1,29 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-+  <component name="BranchesTreeState">
+-+    <expand>
+-+      <path>
+-+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+      </path>
+-+      <path>
+-+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+      </path>
+-+      <path>
+-+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-+      </path>
+-+    </expand>
+-+    <select />
+-+  </component>
+-   <component name="ChangeListManager">
+-     <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="slight mods">
+-+      <change beforePath="$PROJECT_DIR$/.idea/Pyless_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pyless_test.iml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/ui_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_main.ui" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -164,6 +183,18 @@
+-     </task>
+-     <option name="localTasksCounter" value="10" />
+-     <servers />
+-+  </component>
+-+  <component name="Vcs.Log.Tabs.Properties">
+-+    <option name="TAB_STATES">
+-+      <map>
+-+        <entry key="MAIN">
+-+          <value>
+-+            <State />
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-+    <option name="oldMeFiltersMigrated" value="true" />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="adding Chris" />
+-@@ -190,49 +221,57 @@
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+-     </state>
+-     <state x="-1147" y="577" key="Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603585767332" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.bottom" timestamp="1603930731826">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.bottom" timestamp="1604078100763">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604078100763" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930731826" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.center" timestamp="1603930731826">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.center" timestamp="1604078100762">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1604078100762" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930731826" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.left" timestamp="1603930731826">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.left" timestamp="1604078100762">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1604078100762" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930731826" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="135" key="GridCell.Tab.0.right" timestamp="1603930731826">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.0.right" timestamp="1604078100762">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1604078100762" />
+-     <state width="1877" height="135" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603930731826" />
+-     <state width="1878" height="240" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+-     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.bottom" timestamp="1604078100763">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604078100763" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.center" timestamp="1604078100763">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1604078100763" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.left" timestamp="1604078100763">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1604078100763" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+--    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1603901288887">
+--      <screen x="-1920" y="347" width="1920" height="1050" />
+-+    <state width="1323" height="218" key="GridCell.Tab.1.right" timestamp="1604078100763">
+-+      <screen x="0" y="0" width="1366" height="738" />
+-     </state>
+-+    <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1604078100763" />
+-     <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603901288887" />
+-     <state x="-1408" y="498" key="SettingsEditor" timestamp="1603589664570">
+-       <screen x="-1920" y="347" width="1920" height="1050" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM__Default_Changelist_.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM__Default_Changelist_.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM_[Default_Changelist]" date="1604101489999" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/30/2020 7:36 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM__Default_Changelist_.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM__Default_Changelist_.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM_[Default_Changelist]" date="1604075467972" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/30/2020 12:28 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"today\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_28_2020_9_25_PM_[Default_Changelist]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_28_2020_9_25_PM__Default_Changelist_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/actions.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/actions.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/borrower.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/borrower.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/librarian.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/librarian.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/search.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/search.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1jDDpig9XnSXqe6Yl3vn4MUxlwj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File\" value=\"Python\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\patel\\PycharmProjects\\470_GUI\" />\r\n      <recent name=\"C:\\Users\\patel\\PycharmProjects\\Pyless_test\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.test\">\r\n    <configuration name=\"borrower\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/borrower.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"librarian\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/librarian.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"search\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/search.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/test.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"ui_functions\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Pyless_test\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/ui_functions.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.test\" />\r\n        <item itemvalue=\"Python.librarian\" />\r\n        <item itemvalue=\"Python.borrower\" />\r\n        <item itemvalue=\"Python.search\" />\r\n        <item itemvalue=\"Python.ui_functions\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3360a78e-1475-42d2-ba35-26a99a1a07ac\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1603329953908</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1603329953908</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Librarian works with any login because everyone is in the same table. But they dont need to know that\">\r\n      <created>1604197097356</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604197097356</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Success on admin and Librarian pages\">\r\n      <created>1604197352923</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604197352923</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"today\">\r\n      <created>1604330693277</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604330693277</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"today\">\r\n      <created>1604335030888</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604335030888</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"afternoon\">\r\n      <created>1604431447993</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604431447993</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"new\">\r\n      <created>1604439762577</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604439762577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"new\">\r\n      <created>1604440269395</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604440269395</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"new\">\r\n      <created>1604442267789</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604442267789</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"new\">\r\n      <created>1604442988052</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604442988052</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"new\">\r\n      <created>1604443451588</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604443451588</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"new\">\r\n      <created>1604444059282</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604444059282</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"new\">\r\n      <created>1604444298303</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604444298303</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00031\" summary=\"new\">\r\n      <created>1604444650083</created>\r\n      <option name=\"number\" value=\"00031\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00031\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604444650083</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00032\" summary=\"new\">\r\n      <created>1604444823511</created>\r\n      <option name=\"number\" value=\"00032\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00032\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604444823511</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00033\" summary=\"new\">\r\n      <created>1604444912619</created>\r\n      <option name=\"number\" value=\"00033\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00033\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604444912619</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00034\" summary=\"new\">\r\n      <created>1604445011973</created>\r\n      <option name=\"number\" value=\"00034\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00034\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604445011973</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00035\" summary=\"new\">\r\n      <created>1604445449264</created>\r\n      <option name=\"number\" value=\"00035\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00035\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604445449264</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00036\" summary=\"new\">\r\n      <created>1604446095033</created>\r\n      <option name=\"number\" value=\"00036\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00036\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604446095033</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00037\" summary=\"new\">\r\n      <created>1604447056252</created>\r\n      <option name=\"number\" value=\"00037\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00037\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604447056252</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00038\" summary=\"new\">\r\n      <created>1604447816952</created>\r\n      <option name=\"number\" value=\"00038\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00038\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604447816952</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00039\" summary=\"new\">\r\n      <created>1604447940252</created>\r\n      <option name=\"number\" value=\"00039\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00039\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604447940252</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00040\" summary=\"new\">\r\n      <created>1604449050151</created>\r\n      <option name=\"number\" value=\"00040\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00040\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604449050151</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00041\" summary=\"new\">\r\n      <created>1604449970752</created>\r\n      <option name=\"number\" value=\"00041\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00041\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604449970752</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00042\" summary=\"new\">\r\n      <created>1604450118936</created>\r\n      <option name=\"number\" value=\"00042\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00042\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604450118936</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00043\" summary=\"new\">\r\n      <created>1604450182616</created>\r\n      <option name=\"number\" value=\"00043\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00043\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604450182616</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00044\" summary=\"new\">\r\n      <created>1604450476760</created>\r\n      <option name=\"number\" value=\"00044\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00044\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604450476760</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00045\" summary=\"new\">\r\n      <created>1604450844220</created>\r\n      <option name=\"number\" value=\"00045\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00045\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604450844220</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00046\" summary=\"new\">\r\n      <created>1604451331063</created>\r\n      <option name=\"number\" value=\"00046\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00046\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604451331063</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00047\" summary=\"new\">\r\n      <created>1604453244318</created>\r\n      <option name=\"number\" value=\"00047\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00047\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604453244318</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00048\" summary=\"new\">\r\n      <created>1604453404418</created>\r\n      <option name=\"number\" value=\"00048\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00048\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604453404418</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00049\" summary=\"new\">\r\n      <created>1604454155234</created>\r\n      <option name=\"number\" value=\"00049\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00049\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604454155234</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00050\" summary=\"new functions\">\r\n      <created>1604525748434</created>\r\n      <option name=\"number\" value=\"00050\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00050\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604525748435</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00051\" summary=\"new\">\r\n      <created>1604526520030</created>\r\n      <option name=\"number\" value=\"00051\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00051\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604526520030</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00052\" summary=\"new\">\r\n      <created>1604526860012</created>\r\n      <option name=\"number\" value=\"00052\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00052\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604526860012</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00053\" summary=\"new\">\r\n      <created>1604527684360</created>\r\n      <option name=\"number\" value=\"00053\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00053\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604527684360</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00054\" summary=\"new\">\r\n      <created>1604529014024</created>\r\n      <option name=\"number\" value=\"00054\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00054\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604529014025</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00055\" summary=\"new\">\r\n      <created>1604529830643</created>\r\n      <option name=\"number\" value=\"00055\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00055\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604529830643</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00056\" summary=\"new\">\r\n      <created>1604531330713</created>\r\n      <option name=\"number\" value=\"00056\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00056\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604531330713</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00057\" summary=\"new book hold function\">\r\n      <created>1604531371317</created>\r\n      <option name=\"number\" value=\"00057\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00057\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604531371317</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00058\" summary=\"new book hold function\">\r\n      <created>1604532091721</created>\r\n      <option name=\"number\" value=\"00058\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00058\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604532091721</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00059\" summary=\"new book hold function\">\r\n      <created>1604532205493</created>\r\n      <option name=\"number\" value=\"00059\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00059\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604532205493</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00060\" summary=\"new book hold function\">\r\n      <created>1604533357724</created>\r\n      <option name=\"number\" value=\"00060\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00060\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604533357724</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00061\" summary=\"new\">\r\n      <created>1604537840285</created>\r\n      <option name=\"number\" value=\"00061\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00061\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604537840286</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00062\" summary=\"new\">\r\n      <created>1604591796149</created>\r\n      <option name=\"number\" value=\"00062\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00062\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604591796150</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00063\" summary=\"new\">\r\n      <created>1604592175843</created>\r\n      <option name=\"number\" value=\"00063\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00063\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604592175844</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00064\" summary=\"new\">\r\n      <created>1604603178831</created>\r\n      <option name=\"number\" value=\"00064\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00064\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604603178832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00065\" summary=\"new\">\r\n      <created>1604604941694</created>\r\n      <option name=\"number\" value=\"00065\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00065\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604604941694</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00066\" summary=\"new\">\r\n      <created>1604605924555</created>\r\n      <option name=\"number\" value=\"00066\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00066\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604605924555</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00067\" summary=\"new\">\r\n      <created>1604606556193</created>\r\n      <option name=\"number\" value=\"00067\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00067\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604606556193</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"68\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.History.Properties\">\r\n    <option name=\"COLUMN_ORDER\">\r\n      <list>\r\n        <option value=\"0\" />\r\n        <option value=\"2\" />\r\n        <option value=\"3\" />\r\n        <option value=\"1\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"adding Chris\" />\r\n    <MESSAGE value=\"gui\" />\r\n    <MESSAGE value=\"updated\" />\r\n    <MESSAGE value=\"fonts big\" />\r\n    <MESSAGE value=\"slight mods\" />\r\n    <MESSAGE value=\"updated fiday\" />\r\n    <MESSAGE value=\"updated fiday 1:33\" />\r\n    <MESSAGE value=\"updated sat\" />\r\n    <MESSAGE value=\"password for user working\" />\r\n    <MESSAGE value=\"login &amp; password for borrower working\" />\r\n    <MESSAGE value=\"working with Librarian with minor issues\" />\r\n    <MESSAGE value=\"login with Librarian succcess\" />\r\n    <MESSAGE value=\"login with Librarian succcess 100 on 431 test lets got boys\" />\r\n    <MESSAGE value=\"Librarian works with any login because everyone is in the same table. But they dont need to know that\" />\r\n    <MESSAGE value=\"Success on admin and Librarian pages\" />\r\n    <MESSAGE value=\"today\" />\r\n    <MESSAGE value=\"afternoon\" />\r\n    <MESSAGE value=\"new functions\" />\r\n    <MESSAGE value=\"new book hold function\" />\r\n    <MESSAGE value=\"new\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"new\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"-1506\" y=\"527\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1604073268270\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1506\" y=\"527\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604073268270\" />\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1603478365443\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1230\" y=\"619\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603478365443\" />\r\n    <state x=\"92\" y=\"92\" width=\"1182\" height=\"554\" key=\"DiffContextDialog\" timestamp=\"1604432440123\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state x=\"92\" y=\"92\" width=\"1182\" height=\"554\" key=\"DiffContextDialog/0.0.1366.738@0.0.1366.738\" timestamp=\"1604432440123\" />\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl\" timestamp=\"1603588662969\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1180\" y=\"627\" key=\"FileChooserDialogImpl/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603588662969\" />\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog\" timestamp=\"1603585801605\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1146\" y=\"752\" key=\"Github.ShareDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585801605\" />\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1603585767332\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1147\" y=\"577\" key=\"Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603585767332\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1604609105803\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105803\" />\r\n    <state width=\"1877\" height=\"179\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050\" timestamp=\"1604424652209\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687153\" />\r\n    <state width=\"1877\" height=\"170\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604352935307\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1878\" height=\"179\" key=\"GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1604414033559\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.center\" timestamp=\"1604609105802\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105802\" />\r\n    <state width=\"1877\" height=\"179\" key=\"GridCell.Tab.0.center/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050\" timestamp=\"1604424652209\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.center/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687152\" />\r\n    <state width=\"1877\" height=\"170\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604352935307\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1878\" height=\"179\" key=\"GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1604414033558\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.left\" timestamp=\"1604609105802\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105802\" />\r\n    <state width=\"1877\" height=\"179\" key=\"GridCell.Tab.0.left/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050\" timestamp=\"1604424652209\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.left/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687152\" />\r\n    <state width=\"1877\" height=\"170\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604352935307\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1878\" height=\"179\" key=\"GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1604414033558\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.right\" timestamp=\"1604609105802\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105802\" />\r\n    <state width=\"1877\" height=\"179\" key=\"GridCell.Tab.0.right/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050\" timestamp=\"1604424652209\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.0.right/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687153\" />\r\n    <state width=\"1877\" height=\"170\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604352935307\" />\r\n    <state width=\"1878\" height=\"240\" key=\"GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048\" timestamp=\"1603671076350\" />\r\n    <state width=\"1878\" height=\"179\" key=\"GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1604414033558\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048\" timestamp=\"1603462660308\" />\r\n    <state width=\"1877\" height=\"277\" key=\"GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331255708\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1604609105604\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105604\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.1.bottom/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687153\" />\r\n    <state width=\"1877\" height=\"283\" key=\"GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604346156038\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.center\" timestamp=\"1604609105604\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105604\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.1.center/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687153\" />\r\n    <state width=\"1877\" height=\"283\" key=\"GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604346156038\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.left\" timestamp=\"1604609105603\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105603\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.1.left/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687153\" />\r\n    <state width=\"1877\" height=\"283\" key=\"GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604346156038\" />\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.right\" timestamp=\"1604609105604\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state width=\"1323\" height=\"218\" key=\"GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738\" timestamp=\"1604609105604\" />\r\n    <state width=\"1877\" height=\"282\" key=\"GridCell.Tab.1.right/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431687153\" />\r\n    <state width=\"1877\" height=\"283\" key=\"GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604346156038\" />\r\n    <state x=\"347\" y=\"89\" key=\"RollbackChangesDialog\" timestamp=\"1604523444129\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state x=\"347\" y=\"89\" key=\"RollbackChangesDialog/0.0.1366.738@0.0.1366.738\" timestamp=\"1604523444129\" />\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor\" timestamp=\"1604073815500\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1408\" y=\"498\" key=\"SettingsEditor/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604073815500\" />\r\n    <state x=\"-1459\" y=\"517\" key=\"SettingsEditor/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1603331399437\" />\r\n    <state x=\"393\" y=\"182\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1604606562537\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state x=\"393\" y=\"182\" key=\"Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738\" timestamp=\"1604606562537\" />\r\n    <state x=\"552\" y=\"258\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431451511\" />\r\n    <state x=\"-1368\" y=\"605\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604335036185\" />\r\n    <state x=\"547\" y=\"309\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1604443440068\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"738\" />\r\n    </state>\r\n    <state x=\"547\" y=\"309\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738\" timestamp=\"1604443440068\" />\r\n    <state x=\"769\" y=\"439\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604431307704\" />\r\n    <state x=\"-1151\" y=\"786\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604079201351\" />\r\n    <state x=\"-1396\" y=\"601\" key=\"com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2\" timestamp=\"1604346020754\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1396\" y=\"601\" key=\"com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604346020754\" />\r\n    <state x=\"-1878\" y=\"0\" width=\"1894\" height=\"1008\" maximized=\"true\" key=\"dock-window-1\" timestamp=\"1604425463488\">\r\n      <screen x=\"-1920\" y=\"0\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1878\" y=\"0\" width=\"1894\" height=\"1008\" maximized=\"true\" key=\"dock-window-1/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048\" timestamp=\"1604425463488\" />\r\n    <state x=\"-1297\" y=\"574\" width=\"672\" height=\"678\" key=\"search.everywhere.popup\" timestamp=\"1604192140490\">\r\n      <screen x=\"-1920\" y=\"347\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"-1297\" y=\"574\" width=\"672\" height=\"678\" key=\"search.everywhere.popup/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050\" timestamp=\"1604192140490\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/workspace.xml	(date 1604870996845)
+@@ -13,20 +13,29 @@
+       <path>
+         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:githubs" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </expand>
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="today">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_28_2020_9_25_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_28_2020_9_25_PM__Default_Changelist_.xml" beforeDir="false" />
++    <list default="true" id="3360a78e-1475-42d2-ba35-26a99a1a07ac" name="Default Changelist" comment="after feedback mod/del">
++      <change beforePath="$PROJECT_DIR$/.idea/Pyless_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pyless_test.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_12_28_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_2020_7_36_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_4_2020_3_02_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_4_2020_3_02_PM__Default_Changelist_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/borrower.py" beforeDir="false" afterPath="$PROJECT_DIR$/borrower.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/librarian.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/search.py" beforeDir="false" afterPath="$PROJECT_DIR$/search.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -181,7 +190,7 @@
+       </list>
+     </recent_temporary>
+   </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+   <component name="SvnConfiguration">
+     <configuration />
+   </component>
+@@ -192,6 +201,55 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1603329953908</updated>
++    </task>
++    <task id="LOCAL-00012" summary="updated sat">
++      <created>1604189402791</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1604189402791</updated>
++    </task>
++    <task id="LOCAL-00013" summary="password for user working">
++      <created>1604194077809</created>
++      <option name="number" value="00013" />
++      <option name="presentableId" value="LOCAL-00013" />
++      <option name="project" value="LOCAL" />
++      <updated>1604194077809</updated>
++    </task>
++    <task id="LOCAL-00014" summary="login &amp; password for borrower working">
++      <created>1604194400204</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1604194400204</updated>
++    </task>
++    <task id="LOCAL-00015" summary="working with Librarian with minor issues">
++      <created>1604196304642</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1604196304642</updated>
++    </task>
++    <task id="LOCAL-00016" summary="login with Librarian succcess">
++      <created>1604196999036</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1604196999036</updated>
++    </task>
++    <task id="LOCAL-00017" summary="login with Librarian succcess 100 on 431 test lets got boys">
++      <created>1604197026159</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1604197026159</updated>
++    </task>
++    <task id="LOCAL-00018" summary="Librarian works with any login because everyone is in the same table. But they dont need to know that">
++      <created>1604197090333</created>
++      <option name="number" value="00018" />
++      <option name="presentableId" value="LOCAL-00018" />
++      <option name="project" value="LOCAL" />
++      <updated>1604197090333</updated>
+     </task>
+     <task id="LOCAL-00019" summary="Librarian works with any login because everyone is in the same table. But they dont need to know that">
+       <created>1604197097356</created>
+@@ -487,56 +545,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1604533357724</updated>
+     </task>
+-    <task id="LOCAL-00061" summary="new">
+-      <created>1604537840285</created>
+-      <option name="number" value="00061" />
+-      <option name="presentableId" value="LOCAL-00061" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604537840286</updated>
+-    </task>
+-    <task id="LOCAL-00062" summary="new">
+-      <created>1604591796149</created>
+-      <option name="number" value="00062" />
+-      <option name="presentableId" value="LOCAL-00062" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604591796150</updated>
+-    </task>
+-    <task id="LOCAL-00063" summary="new">
+-      <created>1604592175843</created>
+-      <option name="number" value="00063" />
+-      <option name="presentableId" value="LOCAL-00063" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604592175844</updated>
+-    </task>
+-    <task id="LOCAL-00064" summary="new">
+-      <created>1604603178831</created>
+-      <option name="number" value="00064" />
+-      <option name="presentableId" value="LOCAL-00064" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604603178832</updated>
+-    </task>
+-    <task id="LOCAL-00065" summary="new">
+-      <created>1604604941694</created>
+-      <option name="number" value="00065" />
+-      <option name="presentableId" value="LOCAL-00065" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604604941694</updated>
+-    </task>
+-    <task id="LOCAL-00066" summary="new">
+-      <created>1604605924555</created>
+-      <option name="number" value="00066" />
+-      <option name="presentableId" value="LOCAL-00066" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604605924555</updated>
+-    </task>
+-    <task id="LOCAL-00067" summary="new">
+-      <created>1604606556193</created>
+-      <option name="number" value="00067" />
+-      <option name="presentableId" value="LOCAL-00067" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1604606556193</updated>
+-    </task>
+-    <option name="localTasksCounter" value="68" />
++    <option name="localTasksCounter" value="61" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.History.Properties">
+@@ -580,9 +589,9 @@
+     <MESSAGE value="today" />
+     <MESSAGE value="afternoon" />
+     <MESSAGE value="new functions" />
+-    <MESSAGE value="new book hold function" />
+     <MESSAGE value="new" />
+-    <option name="LAST_COMMIT_MESSAGE" value="new" />
++    <MESSAGE value="new book hold function" />
++    <option name="LAST_COMMIT_MESSAGE" value="new book hold function" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="-1506" y="527" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604073268270">
+@@ -609,72 +618,72 @@
+       <screen x="-1920" y="347" width="1920" height="1050" />
+     </state>
+     <state x="-1147" y="577" key="Github.UntrackedFilesDialog/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603585767332" />
+-    <state width="1323" height="218" key="GridCell.Tab.0.bottom" timestamp="1604609105803">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1877" height="177" key="GridCell.Tab.0.bottom" timestamp="1604628406281">
++      <screen x="-1920" y="347" width="1920" height="1050" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604609105803" />
++    <state width="1323" height="218" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604533290011" />
+     <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1604424652209" />
+     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687153" />
+-    <state width="1877" height="170" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604352935307" />
++    <state width="1877" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604628406281" />
+     <state width="1878" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+     <state width="1878" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1604414033559" />
+     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+     <state width="1877" height="277" key="GridCell.Tab.0.bottom/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+-    <state width="1323" height="218" key="GridCell.Tab.0.center" timestamp="1604609105802">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1877" height="177" key="GridCell.Tab.0.center" timestamp="1604628406281">
++      <screen x="-1920" y="347" width="1920" height="1050" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1604609105802" />
++    <state width="1323" height="218" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1604533290011" />
+     <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1604424652209" />
+     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687152" />
+-    <state width="1877" height="170" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604352935307" />
++    <state width="1877" height="177" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604628406281" />
+     <state width="1878" height="240" key="GridCell.Tab.0.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+     <state width="1878" height="179" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1604414033558" />
+     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+     <state width="1877" height="277" key="GridCell.Tab.0.center/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+-    <state width="1323" height="218" key="GridCell.Tab.0.left" timestamp="1604609105802">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1877" height="177" key="GridCell.Tab.0.left" timestamp="1604628406281">
++      <screen x="-1920" y="347" width="1920" height="1050" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1604609105802" />
++    <state width="1323" height="218" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1604533290011" />
+     <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1604424652209" />
+     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687152" />
+-    <state width="1877" height="170" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604352935307" />
++    <state width="1877" height="177" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604628406281" />
+     <state width="1878" height="240" key="GridCell.Tab.0.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+     <state width="1878" height="179" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1604414033558" />
+     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+     <state width="1877" height="277" key="GridCell.Tab.0.left/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+-    <state width="1323" height="218" key="GridCell.Tab.0.right" timestamp="1604609105802">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1877" height="177" key="GridCell.Tab.0.right" timestamp="1604628406281">
++      <screen x="-1920" y="347" width="1920" height="1050" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1604609105802" />
++    <state width="1323" height="218" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1604533290011" />
+     <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1048/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1604424652209" />
+     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687153" />
+-    <state width="1877" height="170" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604352935307" />
++    <state width="1877" height="177" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604628406281" />
+     <state width="1878" height="240" key="GridCell.Tab.0.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@0.0.1920.1048" timestamp="1603671076350" />
+     <state width="1878" height="179" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1604414033558" />
+     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/-1920.347.1920.1050/0.0.1920.1048@0.0.1920.1048" timestamp="1603462660308" />
+     <state width="1877" height="277" key="GridCell.Tab.0.right/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331255708" />
+-    <state width="1323" height="218" key="GridCell.Tab.1.bottom" timestamp="1604609105604">
++    <state width="1323" height="218" key="GridCell.Tab.1.bottom" timestamp="1604533289788">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604609105604" />
++    <state width="1323" height="218" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1604533289788" />
+     <state width="1877" height="282" key="GridCell.Tab.1.bottom/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687153" />
+     <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604346156038" />
+-    <state width="1323" height="218" key="GridCell.Tab.1.center" timestamp="1604609105604">
++    <state width="1323" height="218" key="GridCell.Tab.1.center" timestamp="1604533289788">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1604609105604" />
++    <state width="1323" height="218" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1604533289788" />
+     <state width="1877" height="282" key="GridCell.Tab.1.center/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687153" />
+     <state width="1877" height="283" key="GridCell.Tab.1.center/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604346156038" />
+-    <state width="1323" height="218" key="GridCell.Tab.1.left" timestamp="1604609105603">
++    <state width="1323" height="218" key="GridCell.Tab.1.left" timestamp="1604533289788">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1604609105603" />
++    <state width="1323" height="218" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1604533289788" />
+     <state width="1877" height="282" key="GridCell.Tab.1.left/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687153" />
+     <state width="1877" height="283" key="GridCell.Tab.1.left/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604346156038" />
+-    <state width="1323" height="218" key="GridCell.Tab.1.right" timestamp="1604609105604">
++    <state width="1323" height="218" key="GridCell.Tab.1.right" timestamp="1604533289788">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+-    <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1604609105604" />
++    <state width="1323" height="218" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1604533289788" />
+     <state width="1877" height="282" key="GridCell.Tab.1.right/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431687153" />
+     <state width="1877" height="283" key="GridCell.Tab.1.right/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604346156038" />
+     <state x="347" y="89" key="RollbackChangesDialog" timestamp="1604523444129">
+@@ -686,10 +695,10 @@
+     </state>
+     <state x="-1408" y="498" key="SettingsEditor/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604073815500" />
+     <state x="-1459" y="517" key="SettingsEditor/3840.365.1680.986/0.0.1920.1048/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1603331399437" />
+-    <state x="393" y="182" key="Vcs.Push.Dialog.v2" timestamp="1604606562537">
++    <state x="393" y="182" key="Vcs.Push.Dialog.v2" timestamp="1604532209027">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+-    <state x="393" y="182" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1604606562537" />
++    <state x="393" y="182" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1604532209027" />
+     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1048/-1920.0.1920.1050@0.0.1920.1048" timestamp="1604431451511" />
+     <state x="-1368" y="605" key="Vcs.Push.Dialog.v2/0.0.1920.1048/3840.365.1680.1020/-1920.347.1920.1050@-1920.347.1920.1050" timestamp="1604335036185" />
+     <state x="547" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604443440068">
+Index: .idea/Pyless_test.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.8 (venv)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/Pyless_test.iml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/Pyless_test.iml	(date 1604626682592)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.8 (venv)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision f585bd2499acfb992c1bcd70e411d998352fae83)
++++ .idea/misc.xml	(date 1604626682608)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (venv)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_11_4_2020_3_02_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Update_at_11_4_2020_3_02_PM__Default_Changelist_.xml
